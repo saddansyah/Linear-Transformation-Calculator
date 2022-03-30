@@ -1,2 +1,2 @@
 # Linear Transformation Calculator
- 2D and 3D Transformation Calculator
+ (coming soon 2D) and 3D Transformation Calculator

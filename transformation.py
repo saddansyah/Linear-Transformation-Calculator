@@ -1,9 +1,13 @@
+# by Sadddan Syah Akbar
+# https://github.com/saddansyah
+
 import numpy as np
 
 class Transform:
     def __init__(self):
         pass
 
+    @staticmethod    
     def translation(point: np.ndarray, tx, ty, tz):
 
         if(len(point) < 4):
@@ -16,6 +20,7 @@ class Transform:
         # print(translation_matrix)
         return (translation_matrix @ point)
 
+    @staticmethod  
     def scaling(point: np.ndarray, sx, sy, sz):
         if(len(point) < 4):
             point = np.append(point, 1)
@@ -29,6 +34,7 @@ class Transform:
         # slicing index terakhir biar hasilnya [x,y,z] instead of [x,y,z,1]
         return (scaling_matrix @ point)
 
+    @staticmethod  
     def shearxy(point: np.ndarray, shx, shy):
         if(len(point) < 4):
             point = np.append(point, 1)
@@ -42,6 +48,7 @@ class Transform:
         # slicing index terakhir biar hasilnya [x,y,z] instead of [x,y,z,1]
         return (shearxy_matrix @ point)
 
+    @staticmethod  
     def shearyz(point: np.ndarray, shy, shz):
         if(len(point) < 4):
             point = np.append(point, 1)
@@ -55,6 +62,7 @@ class Transform:
         # slicing index terakhir biar hasilnya [x,y,z] instead of [x,y,z,1]
         return (shearyz_matrix @ point)
 
+    @staticmethod  
     def shearxz(point: np.ndarray, shx, shz):
         if(len(point) < 4):
             point = np.append(point, 1)
@@ -68,6 +76,7 @@ class Transform:
         # slicing index terakhir biar hasilnya [x,y,z] instead of [x,y,z,1]
         return (shearxz_matrix @ point)
 
+    @staticmethod  
     def rotationx(point: np.ndarray, rot_cos, rot_sin):
         if(len(point) < 4):
             point = np.append(point, 1)
@@ -80,6 +89,7 @@ class Transform:
         # print(rotatex_matrix)
         return (rotatex_matrix @ point)
 
+    @staticmethod  
     def rotationy(point: np.ndarray, rot_cos, rot_sin):
         if(len(point) < 4):
             point = np.append(point, 1)
@@ -92,6 +102,7 @@ class Transform:
         # print(rotatey_matrix)
         return (rotatey_matrix @ point)
 
+    @staticmethod  
     def rotationz(point: np.ndarray, rot_cos, rot_sin):
         if(len(point) < 4):
             point = np.append(point, 1)
@@ -104,7 +115,8 @@ class Transform:
         # print(rotatez_matrix)
         return (rotatez_matrix @ point)
 
-    def arb_rotation(point: np.ndarray, M: np.ndarray, N: np.ndarray, angle):
+    @staticmethod  
+    def arb_rotation(point, M: np.ndarray, N: np.ndarray, angle):
         if(len(point) < 4):
             point = np.append(point, 1)
         
